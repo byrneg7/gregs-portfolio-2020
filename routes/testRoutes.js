@@ -3,7 +3,7 @@ module.exports = (app) => {
     res.send({get:"success"})
   });
 
-  app.post('/api/alt',(req,res)=>{
+  app.post('/api/test',(req,res)=>{
       res.send({post:"success"})
   });
 };
