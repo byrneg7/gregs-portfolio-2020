@@ -1,6 +1,4 @@
-# Project Title
-
-React / Express Full-Stack Quickstart
+# React / Express Full-Stack Quickstart
 
 ## Prerequisites
 
