@@ -1,10 +1,9 @@
 module.exports = (app) => {
   app.get('/api/test',(req,res)=>{
-    res.send({test:"success"})
+    res.send({get:"success"})
   });
 
-  app.get('/api/button',(req,res)=>{
-      res.send({click:"success"})
+  app.post('/api/alt',(req,res)=>{
+      res.send({post:"success"})
   });
 };
-
