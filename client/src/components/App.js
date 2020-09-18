@@ -1,23 +1,16 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
+import React from "react";
 
-import { testGET, testPOST } from '../utils/api/testRoutes';
-import Welcome from './Welcome'
-import Example from './Example'
+import { testGET, testPOST } from "../utils/api/testRoutes";
+import Router from "./Router";
 
 class App extends React.Component {
-  componentDidMount(){
+  componentDidMount() {
     testGET();
     testPOST();
   }
-  render(){
-    return (
-      <div>
-        <Route path="/" exact component={Welcome} />
-        <Route path="/Example" exact component={Example} />
-      </div>
-    );
+  render() {
+    return <Router />;
   }
-  }
+}
 
 export default App;
