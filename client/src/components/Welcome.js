@@ -10,7 +10,6 @@ const Welcome = () => {
           <li>Express backend</li>
           <li>React frontend</li>
           <li>Redux</li>
-          <li>Redux Form</li>
           <li>React Router</li>
           <li>Axios requests to backend on app startup</li>
           <li>Dynamic keys</li>
