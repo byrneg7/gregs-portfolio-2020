@@ -4,7 +4,7 @@ import { Route } from "react-router-dom";
 import Example from "./Example";
 import LandingPage from "./landing-page/LandingPage";
 import RouteWithLayout from "./hocs/RouteWithLayout";
-import LandingPageLayout from "./layouts/LandingPageLayout";
+import LandingPageLayout from "./layouts/landing-page-layout/LandingPageLayout";
 
 const Router = () => {
   return (
