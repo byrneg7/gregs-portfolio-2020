@@ -4,7 +4,6 @@ import styled from "styled-components";
 const LandingPageLayout = ({ children }) => {
   return (
     <LandingPageContainer>
-      landing page layout
       {children}
     </LandingPageContainer>
   );

@@ -1,28 +1,61 @@
 import React from "react";
 import styled from "styled-components";
-import { HACKER_GREEN } from "../../../assets/stylesheets/colors";
+
+import {OUTLINE_GREY} from "../../../assets/stylesheets/colors";
+import LinkIcon from "../../shared/LinkIcon";
+import githubImage from '../../../assets/images/svgs/github.png';
 
 const SECTIONS = ["intro", "skills", "contact"];
 
 const Navbar = () => {
-  const renderLinks = () => {
-    return SECTIONS.map((section) => {
-      return <a href={`#${section}`}>{section}</a>;
-    });
-  };
-  return <NavbarContainer>{renderLinks()}</NavbarContainer>;
+    const renderLinks = () => {
+        return SECTIONS.map((section) => {
+            return <a href={`#${section}`}>{section}</a>;
+        });
+    };
+    return (
+        <NavbarContainer>
+          <ExternalLinks>
+            <LinkIcon src={githubImage} altText='github logo' url='https://github.com/byrneg7'/>
+          </ExternalLinks>
+          <LinkContainer>
+            {renderLinks()}
+          </LinkContainer>
+        </NavbarContainer>
+    );
 };
 
 export default Navbar;
 
+
 const NavbarContainer = styled.div`
-  margin-top: 40px;
+ border-bottom: 1px solid ${OUTLINE_GREY};
+ display: flex;
+ flex-direction: row;
+`;
+
+const ExternalLinks = styled.div`
+  width: 60%;
+  display: flex;
+  margin-left: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  @media (max-width: 768px) {
+    width: 30%;
+  }
+`;
+
+const LinkContainer = styled.div`
+  width: 40%;
+  margin: 25px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-around;
   text-transform: capitalize;
   @media (max-width: 768px) {
-    margin-top: 20px;
+    width: 70%;
+    margin-top: 25px;
   }
 
   a {
@@ -40,11 +73,11 @@ const NavbarContainer = styled.div`
     text-decoration: none;
 
     :visited {
-      color: ${HACKER_GREEN};
+      color: black;
     }
 
     :link {
-      color: ${HACKER_GREEN};
+      color: black;
     }
     @media (max-width: 768px) {
       font-size: 16px;

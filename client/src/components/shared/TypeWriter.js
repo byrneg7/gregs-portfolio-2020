@@ -53,7 +53,7 @@ export default TypeWriter;
 
 const TypedTextContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: left;
 
   @keyframes blink-caret {
     from,
@@ -84,7 +84,7 @@ const TypedText = styled.div`
     letter-spacing: 0.15em;
     color: ${HACKER_GREEN};
     animation: typing 1.5s steps(12, end), blink-caret 1s step-end infinite;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
   h1 {
     font-size: 80px;
@@ -105,7 +105,7 @@ const TypedText = styled.div`
 
 const NormalTextContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: left;
 `;
 
 const NormalText = styled.div`
