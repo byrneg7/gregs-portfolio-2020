@@ -14,10 +14,10 @@ export default LandingPageLayout;
 
 const LandingPageContainer = styled.div`
   position: absolute;
-  height: auto;
-  bottom: 0;
+  min-height: 100%;
+  bottom: 100%;
   top: 0;
   left: 0;
   right: 0;
-  background-color: black;
+  z-index: -1;
 `;

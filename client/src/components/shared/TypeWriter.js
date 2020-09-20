@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { HACKER_GREEN } from "../../assets/stylesheets/colors";
 
 const TypeWriter = ({
   content,
@@ -60,7 +61,7 @@ const TypedTextContainer = styled.div`
       border-color: transparent;
     }
     50% {
-      border-color: ${({ hideCaret }) => (hideCaret ? "black" : "#0e6b0e")};
+      border-color: ${({ hideCaret }) => (hideCaret ? "black" : HACKER_GREEN)};
     }
   }
 
@@ -76,14 +77,14 @@ const TypedTextContainer = styled.div`
 
 const TypedText = styled.div`
   * {
-    font-family: "Saira Stencil One", cursive;
     overflow: hidden;
     border-right: 0.15em solid #0e6b0e;
     white-space: nowrap;
     margin: 0 auto;
     letter-spacing: 0.15em;
-    color: #0e6b0e;
+    color: ${HACKER_GREEN};
     animation: typing 1.5s steps(12, end), blink-caret 1s step-end infinite;
+    margin-bottom: 10px;
   }
   h1 {
     font-size: 80px;
@@ -109,12 +110,11 @@ const NormalTextContainer = styled.div`
 
 const NormalText = styled.div`
   * {
-    font-family: "Saira Stencil One", cursive;
     overflow: hidden;
     white-space: nowrap;
     margin: 0 auto;
     letter-spacing: 0.15em;
-    color: #0e6b0e;
+  color: ${HACKER_GREEN};  
   }
    h1 {
     font-size: 80px;
