@@ -3,9 +3,10 @@ import styled from "styled-components";
 
 import {OUTLINE_GREY} from "../../../assets/stylesheets/colors";
 import LinkIcon from "../../shared/LinkIcon";
-import githubImage from '../../../assets/images/svgs/github.png';
+import githubImage from '../../../assets/images/svgs/github.svg';
+import linkedinImage from '../../../assets/images/svgs/linkedin.svg';
 
-const SECTIONS = ["intro", "skills", "contact"];
+const SECTIONS = ["skills", "intro", "contact"];
 
 const Navbar = () => {
     const renderLinks = () => {
@@ -17,6 +18,7 @@ const Navbar = () => {
         <NavbarContainer>
           <ExternalLinks>
             <LinkIcon src={githubImage} altText='github logo' url='https://github.com/byrneg7'/>
+            <LinkIcon src={linkedinImage} altText='linkedin logo' url='https://www.linkedin.com/in/byrneg7/'/>
           </ExternalLinks>
           <LinkContainer>
             {renderLinks()}

@@ -12,9 +12,10 @@ const LinkIcon = ({src, altText='alt text', url}) => {
 export default LinkIcon;
 
 const CustomIcon = styled.img`
-  height: 60px;
-  width: 60px;
+  height: 30px;
+  width: 30px;
   :hover {
     cursor: pointer
   };
+  padding: 5px;
 `;

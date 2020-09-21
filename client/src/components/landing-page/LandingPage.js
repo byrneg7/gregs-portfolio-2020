@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import TypeWriter from "../shared/TypeWriter";
 import Intro from "./sections/Intro";
-import Skills from "./sections/Skills";
+import Skills from "./sections/skills/Skills";
 import Contact from "./sections/Contact";
 import Navbar from "./navbar/Navbar";
 import HorizontalDivide from "../shared/HorizontalDivide";
@@ -23,11 +23,9 @@ const LandingPage = () => {
             </HeadingContainer>
             <HorizontalDivide/>
             <SectionsContainer>
-              <SectionsContainerInner>
-                <Intro/>
-                <Skills/>
-                <Contact/>
-              </SectionsContainerInner>
+              <Skills/>
+              <Intro/>
+              <Contact/>
             </SectionsContainer>
         </div>
     );
@@ -52,13 +50,6 @@ const Header = styled.div`
 
 const SectionsContainer = styled.div`
   display:flex;
+  flex-direction: column;
   justify-content: center;
-`;
-
-const SectionsContainerInner = styled.div`
-  width: 75vw;
-  
-  @media (max-width: 768px) {
-    width: 90vw;
-  }
 `;
