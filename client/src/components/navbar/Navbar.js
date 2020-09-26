@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import {OUTLINE_GREY} from "../../../assets/stylesheets/colors";
-import LinkIcon from "../../shared/LinkIcon";
-import githubImage from '../../../assets/images/svgs/github.svg';
-import linkedinImage from '../../../assets/images/svgs/linkedin.svg';
+import {OUTLINE_GREY} from "../../assets/stylesheets/colors";
+import LinkIcon from "../shared/LinkIcon";
+import githubImage from '../../assets/images/svgs/github.svg';
+import linkedinImage from '../../assets/images/svgs/linkedin.svg';
 
 const SECTIONS = ["skills", "intro", "contact"];
 

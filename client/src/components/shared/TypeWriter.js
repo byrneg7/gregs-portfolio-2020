@@ -89,7 +89,7 @@ const TypedText = styled.div`
   h1 {
     font-size: 80px;
     @media (max-width: 768px) {
-      font-size: 42px;
+      font-size: 36px;
     }
   }
   h2 {
@@ -114,12 +114,12 @@ const NormalText = styled.div`
     white-space: nowrap;
     margin: 0 auto;
     letter-spacing: 0.15em;
-  color: ${HACKER_GREEN};  
+    color: ${HACKER_GREEN};
   }
-   h1 {
+  h1 {
     font-size: 80px;
     @media (max-width: 768px) {
-      font-size: 42px;
+      font-size: 36px;
     }
   }
   h2 {
@@ -127,6 +127,7 @@ const NormalText = styled.div`
     @media (max-width: 768px) {
       font-size: 20px;
     }
+  }
   p {
     font-size: 16px;
   }

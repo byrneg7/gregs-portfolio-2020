@@ -1,41 +1,90 @@
-import React from 'react';
-import styled from 'styled-components';
-import { OUTLINE_LIGHT_GREY } from "../../../../assets/stylesheets/colors";
+import React from "react";
+import styled from "styled-components";
+import { OUTLINE_GREY } from "../../../../assets/stylesheets/colors";
 
-const SkillsIcon = ({src, altText, height, width}) => {
-  return(
+const SkillsIcon = ({
+  src,
+  altText,
+  height,
+  width,
+  text: { heading, body },
+}) => {
+  return (
     <SkillsIconContainer>
-      <SkillIcon src={src} alt={altText} height={height} width={width}/>
+      <FlipCard className="flip-card">
+        <FlipCardInner className="flip-card-inner">
+          <FlipCardFront className="flip-card-front">
+            <img
+              src={src}
+              alt={altText}
+              style={{ width: width, height: height }}
+            />
+          </FlipCardFront>
+          <FlipCardBack className="flip-card-back">
+            <h1>{heading}</h1>
+            <p>{body}</p>
+          </FlipCardBack>
+        </FlipCardInner>
+      </FlipCard>
     </SkillsIconContainer>
-  )
+  );
 };
+
+const FlipCardSide = styled.div`
+  position: absolute;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+`;
+
+const FlipCardFront = styled(FlipCardSide)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $OUTLINE_LIGHT_GREY;
+  color: black;
+`;
+
+const FlipCardBack = styled(FlipCardSide)`
+  background-color: ${OUTLINE_GREY};
+  transform: rotateY(180deg);
+  }
+}`;
 
 const SkillsIconContainer = styled.div`
   display: flex;
-  min-height: 200px;
-  min-width: 200px;
   margin: 50px;
-  height: 200px;
   flex-wrap: wrap;
-  width: 200px;
-  background-color: ${OUTLINE_LIGHT_GREY};
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
-  box-shadow: 3px 3px 5px 6px #ccc;
-  :hover {
-   cursor: pointer;
-  }
-  &:hover {
-     content: “ ”;
-     filter: blur(5px);
-      box-shadow: inset 0 0 5px #000000;
-}
 `;
 
-const SkillIcon = styled.img`
-  height:${(height)=> height};
-  width:${(width)=> width};
+const FlipCard = styled.div`
+  min-height: 250px;
+  min-width: 250px;
+  height: 250px;
+  width: 250px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  border-radius: 20px;
+  &:hover {
+    cursor: pointer;
+  }
+  &:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+`;
+
+const FlipCardInner = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 20px;
 `;
 
 export default SkillsIcon;
