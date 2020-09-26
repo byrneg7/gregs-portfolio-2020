@@ -34,7 +34,7 @@ export default LandingPage;
 const HeadingContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 200px;
+  margin-top: 100px;
   margin-bottom: 50px;
   min-height: 150px;
   @media (max-width: 768px) {
