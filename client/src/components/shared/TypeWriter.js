@@ -87,7 +87,7 @@ const TypedText = styled.div`
     margin-bottom: 15px;
   }
   h1 {
-    font-size: 80px;
+    font-size: 90px;
     @media (max-width: 768px) {
       font-size: 36px;
     }
