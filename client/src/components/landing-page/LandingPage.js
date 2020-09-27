@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import TypeWriter from "../shared/TypeWriter";
-import Intro from "./sections/Intro";
+import Intro from "./sections/Intro/Intro";
 import Skills from "./sections/skills/Skills";
 import Contact from "./sections/Contact";
 import HorizontalDivide from "../shared/HorizontalDivide";
@@ -51,4 +51,8 @@ const SectionsContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  > div {
+    margin-top: 50px;
+  }
 `;
