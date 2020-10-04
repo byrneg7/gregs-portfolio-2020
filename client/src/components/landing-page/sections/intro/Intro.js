@@ -20,8 +20,8 @@ export default Intro;
 const IntroContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 1100px;
-  width: 60%;
+  max-width: 1400px;
+  width: 80%;
 
   @media (max-width: 768px) {
     width: 90%;

@@ -18,7 +18,7 @@ const TypeWriter = ({
     } else {
       setRenderPending(false);
     }
-  });
+  }, []);
 
   useEffect(() => {
     if (makeStaticDelay) {

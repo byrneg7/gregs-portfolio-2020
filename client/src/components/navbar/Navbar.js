@@ -1,39 +1,49 @@
 import React from "react";
 import styled from "styled-components";
+import uniqid from "uniqid";
 
-import {OUTLINE_GREY} from "../../assets/stylesheets/colors";
+import { OUTLINE_GREY } from "../../assets/stylesheets/colors";
 import LinkIcon from "../shared/LinkIcon";
-import githubImage from '../../assets/images/svgs/github.svg';
-import linkedinImage from '../../assets/images/svgs/linkedin.svg';
+import githubImage from "../../assets/images/svgs/github.svg";
+import linkedinImage from "../../assets/images/svgs/linkedin.svg";
 
 const SECTIONS = ["skills", "intro", "contact"];
 
 const Navbar = () => {
-    const renderLinks = () => {
-        return SECTIONS.map((section) => {
-            return <a href={`#${section}`}>{section}</a>;
-        });
-    };
-    return (
-        <NavbarContainer>
-          <ExternalLinks>
-            <LinkIcon src={githubImage} altText='github logo' url='https://github.com/byrneg7'/>
-            <LinkIcon src={linkedinImage} altText='linkedin logo' url='https://www.linkedin.com/in/byrneg7/'/>
-          </ExternalLinks>
-          <LinkContainer>
-            {renderLinks()}
-          </LinkContainer>
-        </NavbarContainer>
-    );
+  const renderLinks = () => {
+    return SECTIONS.map((section) => {
+      return (
+        <a key={uniqid()} href={`#${section}`}>
+          {section}
+        </a>
+      );
+    });
+  };
+  return (
+    <NavbarContainer>
+      <ExternalLinks>
+        <LinkIcon
+          src={githubImage}
+          altText="github logo"
+          url="https://github.com/byrneg7"
+        />
+        <LinkIcon
+          src={linkedinImage}
+          altText="linkedin logo"
+          url="https://www.linkedin.com/in/byrneg7/"
+        />
+      </ExternalLinks>
+      <LinkContainer>{renderLinks()}</LinkContainer>
+    </NavbarContainer>
+  );
 };
 
 export default Navbar;
 
-
 const NavbarContainer = styled.div`
- border-bottom: 1px solid ${OUTLINE_GREY};
- display: flex;
- flex-direction: row;
+  border-bottom: 1px solid ${OUTLINE_GREY};
+  display: flex;
+  flex-direction: row;
 `;
 
 const ExternalLinks = styled.div`

@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 import TypeWriter from "../shared/TypeWriter";
-import Intro from "./sections/Intro/Intro";
+import Intro from "./sections/intro/Intro";
 import Skills from "./sections/skills/Skills";
-import Contact from "./sections/Contact";
+import Contact from "./sections/contact/Contact";
 import HorizontalDivide from "../shared/HorizontalDivide";
 
 const LandingPage = () => {

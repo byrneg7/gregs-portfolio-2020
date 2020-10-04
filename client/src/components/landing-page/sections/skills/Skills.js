@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import uniqid from "uniqid";
 import SectionHeading from "../../../shared/SectionHeading";
 import SkillsIcon from "./SkillsIcon";
 import reactIcon from "../../../../assets/images/svgs/react.svg";
@@ -58,6 +59,7 @@ const Skills = () => {
   const renderSkillsTiles = () =>
     SKILLS_LIST.map(({ src, alt, height, width, text }) => (
       <SkillsIcon
+        key={uniqid()}
         src={src}
         altText={alt}
         height={height}
