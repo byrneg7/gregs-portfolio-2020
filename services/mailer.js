@@ -9,17 +9,16 @@ class Mailer {
       subject: title,
       text: message + `\n\n_______FROM: ${fromEmail}_______`,
     };
+    this.mailer = nodemailer.createTransport({
+      service: "gmail",
+      secure: false,
+      port: 25,
+      auth: {
+        user: keys.SENDER_EMAIL,
+        pass: keys.EMAIL_PASS,
+      },
+    });
   }
-
-  mailer = nodemailer.createTransport({
-    service: "gmail",
-    secure: false,
-    port: 25,
-    auth: {
-      user: keys.SENDER_EMAIL,
-      pass: keys.EMAIL_PASS,
-    },
-  });
 
   sendEmail() {
     return new Promise((resolve, reject) => {
