@@ -3,6 +3,12 @@ import styled from "styled-components";
 import SectionHeading from "../../../shared/SectionHeading";
 import TextInput from "./TextInput";
 import TextArea from "./TextArea";
+import {
+  FONT_PURPLE,
+  FONT_PURPLE_DARK,
+} from "../../../../assets/stylesheets/colors";
+import axios from "axios";
+import HorizontalDivide from "../../../shared/HorizontalDivide";
 
 const Contact = () => {
   const [from, setFrom] = useState("");
@@ -35,8 +41,19 @@ const Contact = () => {
     if (isFormInvalid()) {
       console.log("form isnt valid");
     } else {
-      console.log(from, title, message);
+      sendEmail({ from, title, message });
     }
+  };
+
+  const sendEmail = (...formData) => {
+    axios
+      .post("/api/contact", formData)
+      .then((res) => {
+        console.log("success: ", res.data);
+      })
+      .catch((err) => {
+        console.log("error: ", err);
+      });
   };
 
   const isFormInvalid = () =>
@@ -50,34 +67,44 @@ const Contact = () => {
 
   return (
     <ContactContainer id="contact">
+      <HorizontalDivide width="100%" marginBot="20px" />
       <SectionHeading heading="contact" subheading="get in touch" />
       <StyledForm onSubmit={handleSubmit}>
-        <TextInput
-          handler={handleFromInput}
-          label="Your email address:"
-          type="text"
-          value={from}
-          side="left"
-          error={fromError}
-          errorMessage="Please enter your email address!"
-        />
-        <TextInput
-          handler={handleTitleInput}
-          label="Title:"
-          type="text"
-          side="right"
-          value={title}
-          error={titleError}
-          errorMessage="Required!"
-        />
-        <TextArea
-          handler={handleMessageInput}
-          label="Your message:"
-          type="textarea"
-          value={message}
-          error={messageError}
-          errorMessage="Please enter a message!"
-        />
+        <Row>
+          <TextInput
+            handler={handleFromInput}
+            label="Your email address:"
+            type="text"
+            value={from}
+            side="left"
+            placeholder="Email address..."
+            error={fromError}
+            errorMessage="Error"
+          />
+        </Row>
+        <Row>
+          <TextInput
+            handler={handleTitleInput}
+            label="Title:"
+            type="text"
+            side="right"
+            placeholder="Title..."
+            value={title}
+            error={titleError}
+            errorMessage="Error"
+          />
+        </Row>
+        <Row>
+          <TextArea
+            handler={handleMessageInput}
+            label="Your message:"
+            placeholder="Message..."
+            type="textarea"
+            value={message}
+            error={messageError}
+            errorMessage="Error"
+          />
+        </Row>
         <StyledButton type="submit">Send</StyledButton>
       </StyledForm>
     </ContactContainer>
@@ -99,12 +126,20 @@ const ContactContainer = styled.div`
 
 const StyledForm = styled.form`
   display: flex;
-  flex-direction: row;
-  margin-top: 40px;
+  flex-direction: column;
+  margin-top: 20px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   width: 90%;
+`;
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  width: 100%;
+  ${({ customStyles }) => customStyles}
 `;
 
 const StyledButton = styled.button`
@@ -112,8 +147,21 @@ const StyledButton = styled.button`
   width: 100px;
   height: 30px;
   border-radius: 20px;
+  background-color: ${FONT_PURPLE};
+  color: white;
+  border-style: none;
+  border-color: ${FONT_PURPLE};
+  font-family: "Share Tech Mono", monospace;
 
   :hover {
     cursor: pointer;
+  }
+
+  :focus {
+    outline: none;
+  }
+
+  :active {
+    background-color: ${FONT_PURPLE_DARK};
   }
 `;
