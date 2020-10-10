@@ -12,7 +12,7 @@ module.exports = (app) => {
       })
       .catch((err) => {
         console.log("error: ", err);
-        res.send({ contact: "failure" });
+        res.status(500).send({ contact: "failure" });
       });
   });
 };

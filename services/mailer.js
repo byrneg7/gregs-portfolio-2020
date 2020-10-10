@@ -4,31 +4,33 @@ const keys = require("../config/keys");
 class Mailer {
   constructor(fromEmail, title, message) {
     this.mailOptions = {
-      from: fromEmail,
+      from: keys.SENDER_EMAIL,
       to: keys.RECEIVER_EMAIL,
       subject: title,
-      text: message,
+      text: message + `\n\n_______FROM: ${fromEmail}_______`,
     };
   }
 
+  mailer = nodemailer.createTransport({
+    service: "gmail",
+    secure: false,
+    port: 25,
+    auth: {
+      user: keys.SENDER_EMAIL,
+      pass: keys.EMAIL_PASS,
+    },
+  });
+
   sendEmail() {
-    nodemailer
-      .createTransport({
-        service: "gmail",
-        secure: false,
-        port: 25,
-        auth: {
-          user: keys.SENDER_EMAIL,
-          pass: keys.EMAIL_PASS,
-        },
-      })
-      .sendMail(this.mailOptions, (err, info) => {
+    return new Promise((resolve, reject) => {
+      this.mailer.sendMail(this.mailOptions, (err, info) => {
         if (err) {
-          console.log("error: ", err);
+          reject(err);
         } else {
-          console.log("email send successfully: ", info);
+          resolve("Message send successfully");
         }
       });
+    });
   }
 }
 
