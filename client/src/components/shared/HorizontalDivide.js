@@ -14,7 +14,7 @@ const StyledHr = styled.hr`
   margin-bottom: ${({ marginBot }) => marginBot || "0px"};
 
   @media (max-width: 768px) {
-    width: 90vw;
+    width: 90%;
   }
   animation: fadein 5s;
   @keyframes fadein {

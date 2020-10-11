@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import uniqid from "uniqid";
 
-import { OUTLINE_GREY } from "../../assets/stylesheets/colors";
+import { HACKER_GREEN, OUTLINE_GREY } from "../../assets/stylesheets/colors";
 import LinkIcon from "../shared/LinkIcon";
 import githubImage from "../../assets/images/svgs/github.svg";
 import linkedinImage from "../../assets/images/svgs/linkedin.svg";
@@ -13,9 +13,9 @@ const Navbar = () => {
   const renderLinks = () => {
     return SECTIONS.map((section) => {
       return (
-        <a key={uniqid()} href={`#${section}`}>
+        <NavLink key={uniqid()} href={`#${section}`}>
           {section}
-        </a>
+        </NavLink>
       );
     });
   };
@@ -54,6 +54,12 @@ const ExternalLinks = styled.div`
   align-items: center;
   @media (max-width: 768px) {
     width: 30%;
+  }
+`;
+
+const NavLink = styled.a`
+  :hover {
+    color: ${HACKER_GREEN} !important;
   }
 `;
 

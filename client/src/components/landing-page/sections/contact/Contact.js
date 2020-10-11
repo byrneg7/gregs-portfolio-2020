@@ -3,6 +3,7 @@ import styled from "styled-components";
 import SectionHeading from "../../../shared/SectionHeading";
 import TextInput from "./TextInput";
 import TextArea from "./TextArea";
+import { toast } from "react-toastify";
 import {
   FONT_PURPLE,
   FONT_PURPLE_DARK,
@@ -46,13 +47,18 @@ const Contact = () => {
   };
 
   const sendEmail = (...formData) => {
+    resetForm();
     axios
       .post("/api/contact", formData)
       .then((res) => {
-        console.log("success: ", res.data);
+        toast.success("Email sent successfully, thanks for getting in touch!", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
       })
       .catch((err) => {
-        console.log("error: ", err);
+        toast.error("Error, please try again later", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
       });
   };
 
@@ -65,9 +71,15 @@ const Contact = () => {
     if (!message) setMessageError(true);
   };
 
+  const resetForm = () => {
+    setFrom("");
+    setTitle("");
+    setMessage("");
+  };
+
   return (
     <ContactContainer id="contact">
-      <HorizontalDivide width="100%" marginBot="20px" />
+      <HorizontalDivide width="100%" marginBot="40px" />
       <SectionHeading heading="contact" subheading="get in touch" />
       <StyledForm onSubmit={handleSubmit}>
         <Row>
@@ -79,7 +91,7 @@ const Contact = () => {
             side="left"
             placeholder="Email address..."
             error={fromError}
-            errorMessage="Error"
+            errorMessage="Please enter your email address"
           />
         </Row>
         <Row>
@@ -91,7 +103,7 @@ const Contact = () => {
             placeholder="Title..."
             value={title}
             error={titleError}
-            errorMessage="Error"
+            errorMessage="Please enter a title for your message"
           />
         </Row>
         <Row>
@@ -102,7 +114,7 @@ const Contact = () => {
             type="textarea"
             value={message}
             error={messageError}
-            errorMessage="Error"
+            errorMessage="Please add a message"
           />
         </Row>
         <StyledButton type="submit">Send</StyledButton>
@@ -117,11 +129,15 @@ const ContactContainer = styled.div`
   margin-top: 100px;
   margin-bottom: 300px;
   background-color: white;
-  width: 60%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 const StyledForm = styled.form`

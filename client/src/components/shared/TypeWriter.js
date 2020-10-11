@@ -91,11 +91,17 @@ const TypedText = styled.div`
     @media (max-width: 768px) {
       font-size: 36px;
     }
+    @media (max-width: 400px) {
+      font-size: 28px;
+    }
   }
   h2 {
     font-size: 42px;
     @media (max-width: 768px) {
       font-size: 20px;
+    }
+    @media (max-width: 400px) {
+      font-size: 18px;
     }
   }
   p {

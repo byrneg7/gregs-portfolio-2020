@@ -1,16 +1,16 @@
 import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import { testGET, testPOST } from "../utils/api/testRoutes";
 import Router from "./Router";
 
-class App extends React.Component {
-  componentDidMount() {
-    testGET();
-    testPOST();
-  }
-  render() {
-    return <Router />;
-  }
-}
+const App = () => {
+  return (
+    <>
+      <Router />
+      <ToastContainer />
+    </>
+  );
+};
 
 export default App;

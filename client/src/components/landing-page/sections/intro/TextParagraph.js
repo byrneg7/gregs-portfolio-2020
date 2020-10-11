@@ -7,13 +7,13 @@ const TextParagraph = ({ imgSrc }) => {
     <TextParagraphContainer>
       {imgSrc ? <InlineTextImg src={imgSrc} alt="profilePhoto" /> : null}
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        Full-stack web developer at Edgescan. Professional experience with
+        ReactJS, NodeJS, Ruby on Rails, Figma. Experience delivering multiple
+        full-stack mobile-first web applications based on customer requirements.
+        Involved in all stages of the SDLC, from ideation to production.
+        Interested in all aspects of web-development and experimenting with new
+        technologies. Pursuing a part-time MSc. in Advanced Software Development
+        on my weekends.
       </p>
     </TextParagraphContainer>
   );
