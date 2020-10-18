@@ -7,11 +7,16 @@ import { toast } from "react-toastify";
 import {
   FONT_PURPLE,
   FONT_PURPLE_DARK,
+  FONT_PURPLE_DISABLED,
 } from "../../../../assets/stylesheets/colors";
 import axios from "axios";
 import HorizontalDivide from "../../../shared/HorizontalDivide";
+import LoadingGif from "../../../../assets/images/loading.gif";
+import LoadingIcon from "./LoadingButton";
+import LoadingButton from "./LoadingButton";
 
 const Contact = () => {
+  const [loading, setLoading] = useState(false);
   const [from, setFrom] = useState("");
   const [fromError, setFromError] = useState(false);
 
@@ -48,18 +53,20 @@ const Contact = () => {
 
   const sendEmail = (...formData) => {
     resetForm();
+    setLoading(true);
     axios
       .post("/api/contact", formData)
-      .then((res) => {
+      .then(() => {
         toast.success("Email sent successfully, thanks for getting in touch!", {
           position: toast.POSITION.TOP_RIGHT,
         });
       })
-      .catch((err) => {
+      .catch(() => {
         toast.error("Error, please try again later", {
           position: toast.POSITION.TOP_RIGHT,
         });
-      });
+      })
+      .finally(() => setLoading(false));
   };
 
   const isFormInvalid = () =>
@@ -79,7 +86,7 @@ const Contact = () => {
 
   return (
     <ContactContainer id="contact">
-      <HorizontalDivide width="100%" marginBot="40px" />
+      <HorizontalDivide width="100%" />
       <SectionHeading heading="contact" subheading="get in touch" />
       <StyledForm onSubmit={handleSubmit}>
         <Row>
@@ -117,7 +124,7 @@ const Contact = () => {
             errorMessage="Please add a message"
           />
         </Row>
-        <StyledButton type="submit">Send</StyledButton>
+        <LoadingButton loading={loading} type="submit" />
       </StyledForm>
     </ContactContainer>
   );
@@ -126,7 +133,6 @@ const Contact = () => {
 export default Contact;
 
 const ContactContainer = styled.div`
-  margin-top: 100px;
   margin-bottom: 300px;
   background-color: white;
   width: 50%;
@@ -171,6 +177,10 @@ const StyledButton = styled.button`
 
   :hover {
     cursor: pointer;
+  }
+
+  :disabled {
+    background-color: ${FONT_PURPLE_DISABLED};
   }
 
   :focus {

@@ -9,6 +9,7 @@ import nodeIcon from "../../../../assets/images/svgs/node.svg";
 import awsIcon from "../../../../assets/images/svgs/aws.svg";
 import postgresIcon from "../../../../assets/images/svgs/postgres.svg";
 import railsIcon from "../../../../assets/images/svgs/rails.svg";
+import HorizontalDivide from "../../../shared/HorizontalDivide";
 
 const SKILLS_LIST = [
   {
@@ -70,6 +71,7 @@ const Skills = () => {
 
   return (
     <SkillsContainer id="skills">
+      <HorizontalDivide />
       <SectionHeading heading="skills" subheading="technologies and projects" />
       <IconsContainer>{renderSkillsTiles()}</IconsContainer>
     </SkillsContainer>

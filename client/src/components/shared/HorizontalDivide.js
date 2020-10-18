@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { OUTLINE_GREY } from "../../assets/stylesheets/colors";
 
-const HorizontalDivide = ({ width, marginBot }) => {
-  return <StyledHr width={width} marginBot={marginBot} />;
+const HorizontalDivide = ({ width }) => {
+  return <StyledHr width={width} />;
 };
 
 export default HorizontalDivide;
@@ -11,7 +11,8 @@ export default HorizontalDivide;
 const StyledHr = styled.hr`
   border: 1px solid ${OUTLINE_GREY};
   width: ${({ width }) => width || "75vw"};
-  margin-bottom: ${({ marginBot }) => marginBot || "0px"};
+  margin-top: 60px;
+  margin-bottom: 60px;
 
   @media (max-width: 768px) {
     width: 90%;

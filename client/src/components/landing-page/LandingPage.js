@@ -6,6 +6,7 @@ import Intro from "./sections/intro/Intro";
 import Skills from "./sections/skills/Skills";
 import Contact from "./sections/contact/Contact";
 import HorizontalDivide from "../shared/HorizontalDivide";
+import Experience from "./sections/experience/Experience";
 
 const LandingPage = () => {
   const typeWriterHeading = <h1>Hello world.</h1>;
@@ -21,8 +22,9 @@ const LandingPage = () => {
       </HeadingContainer>
       <HorizontalDivide />
       <SectionsContainer>
-        <Skills />
         <Intro />
+        <Experience />
+        <Skills />
         <Contact />
       </SectionsContainer>
     </div>
@@ -52,7 +54,4 @@ const SectionsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  > div {
-    margin-top: 50px;
-  }
 `;

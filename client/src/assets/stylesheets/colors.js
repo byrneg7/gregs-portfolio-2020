@@ -7,3 +7,4 @@ export const FONT_DANGER = "#e22222";
 export const FONT_PURPLE = "#685b94";
 export const FONT_PURPLE_DARK = "#5b5081";
 export const FONT_PURPLE_LIGHT = "#9281c4";
+export const FONT_PURPLE_DISABLED = "#636179";
