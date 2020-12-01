@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FONT_GREY } from "../../assets/stylesheets/colors";
 
-const SectionHeading = ({ heading, subheading }) => {
+const SectionHeading = ({heading, subheading}) => {
   return (
     <Centered>
       <SectionHeadingContainer>
@@ -25,6 +25,7 @@ const SectionHeadingContainer = styled.div`
   display: inline-flex;
   flex-direction: column;
   animation: fadein 5s;
+  margin-bottom: 50px;
   @keyframes fadein {
     from {
       opacity: 0;

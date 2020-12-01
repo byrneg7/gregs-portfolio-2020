@@ -72,7 +72,7 @@ const Skills = () => {
   return (
     <SkillsContainer id="skills">
       <HorizontalDivide />
-      <SectionHeading heading="skills" subheading="technologies and projects" />
+      <SectionHeading heading="Skills" subheading="Technologies and projects" />
       <IconsContainer>{renderSkillsTiles()}</IconsContainer>
     </SkillsContainer>
   );

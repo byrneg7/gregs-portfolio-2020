@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import HorizontalDivide from "../../../shared/HorizontalDivide";
 import SectionHeading from "../../../shared/SectionHeading";
-import CustomStepper from "./CustomStepper";
+import ExperienceNav from "./ExperienceNav";
 
 const Experience = () => {
   return (
@@ -12,7 +12,7 @@ const Experience = () => {
         heading="Experience"
         subheading="Professional background"
       />
-      <CustomStepper />
+      <ExperienceNav/>
     </SkillsContainer>
   );
 };

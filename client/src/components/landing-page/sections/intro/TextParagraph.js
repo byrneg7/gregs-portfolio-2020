@@ -7,13 +7,11 @@ const TextParagraph = ({ imgSrc }) => {
     <TextParagraphContainer>
       {imgSrc ? <InlineTextImg src={imgSrc} alt="profilePhoto" /> : null}
       <p>
-        Full-stack web developer at Edgescan. Professional experience with
-        ReactJS, NodeJS, Ruby on Rails, Figma. Experience delivering multiple
-        full-stack mobile-first web applications based on customer requirements.
-        Involved in all stages of the SDLC, from ideation to production.
-        Interested in all aspects of web-development and experimenting with new
-        technologies. Pursuing a part-time MSc. in Advanced Software Development
-        on my weekends.
+        Full-stack web developer. Professional experience with ReactJS, NodeJS,
+        Ruby on Rails, Figma. Interested in all stages of the SDLC, from
+        ideation to production. Enjoy all aspects of web-development and
+        experimenting with new technologies. Pursuing a part-time MSc. in
+        Advanced Software Development on my weekends.
       </p>
     </TextParagraphContainer>
   );
@@ -23,7 +21,6 @@ export default TextParagraph;
 
 const TextParagraphContainer = styled.div`
   animation: fadein 5s;
-  margin-top: 20px;
 
   p {
     font-size: 26px;
@@ -44,10 +41,10 @@ const TextParagraphContainer = styled.div`
 `;
 
 const InlineTextImg = styled.img`
-  height: 120px;
-  width: 120px;
-  border-radius: 100px;
-  box-shadow: 10px 10px 5px #ccc;
+  height: 150px;
+  width: 150px;
+  margin-top: -20px;
+  margin-left: -20px;
+  margin-right: 20px;
   float: left;
-  margin-right: 35px;
 `;

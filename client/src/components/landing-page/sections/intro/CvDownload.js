@@ -25,7 +25,7 @@ const CvDownloadContainer = styled.div`
   display: flex;
   width: 100%;
   animation: fadein 5s;
-  margin-top: 20px;
+  margin-top: 80px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
