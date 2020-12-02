@@ -28,6 +28,9 @@ const TextParagraphContainer = styled.div`
     text-align: justify;
     color: ${FONT_GREY_DARK};
     margin-top: 0px;
+    @media (max-width: 768px) {
+     font-size: 14px;
+    }
   }
 
   @keyframes fadein {
@@ -47,4 +50,9 @@ const InlineTextImg = styled.img`
   margin-left: -20px;
   margin-right: 20px;
   float: left;
+  @media (max-width: 768px) {
+    height: 100px;
+    width: 100px;
+    margin-left: 0px;
+  }
 `;

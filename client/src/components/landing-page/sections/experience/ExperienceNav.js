@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
-import { Icon, Step } from 'semantic-ui-react'
+import { Step } from 'semantic-ui-react'
 import styled from 'styled-components';
 
 import edgescanIcon from '../../../../assets/images/edgescan-icon.png'
 import showoffIcon from '../../../../assets/images/showoff-icon.png'
-import StepsContent from "./StepsContent";
+import WorkExperience from "./WorkExperience";
 
 const STEPS = [
-  {src: showoffIcon, title: 'Showoff.ie', key: 'showoff'},
   {src: edgescanIcon, title: 'Edgescan', key: 'edgescan'},
+  {src: showoffIcon, title: 'Showoff.ie', key: 'showoff'},
 ]
 
 const ExperienceNav = () => {
-  const [activeStep, setActiveStep] = useState('showoff')
+  const [activeStep, setActiveStep] = useState('edgescan')
 
   const renderSteps = () => STEPS.map(({src, title, key}) => {
     return (
@@ -27,10 +27,16 @@ const ExperienceNav = () => {
 
   return (
     <>
-      <Step.Group widths={3} style={{marginTop: '0px'}}>
-        {renderSteps()}
-      </Step.Group>
-      <StepsContent currentStep={activeStep}/>
+      <Row>
+        <StepsContainer>
+          <Step.Group widths={3} style={{marginTop: '0px'}} unstackable>
+            {renderSteps()}
+          </Step.Group>
+        </StepsContainer>
+      </Row>
+      <Row>
+        <WorkExperience currentStep={activeStep}/>
+      </Row>
     </>
   )
 };
@@ -47,4 +53,18 @@ const CustomIcon = styled.img`
     speak: none;
    margin-right: 10px;
    height:25px;
+`
+
+const StepsContainer = styled.div`
+  width: 100%;
+   @media (max-width: 400px) {
+     max-width: 90%;
+    }
+`
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `
