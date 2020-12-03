@@ -4,19 +4,22 @@ import styled from 'styled-components';
 
 import edgescanIcon from '../../../../assets/images/edgescan-icon.png'
 import showoffIcon from '../../../../assets/images/showoff-icon.png'
-import WorkExperience from "./WorkExperience";
+import CustomCarousel from "./CustomCarousel";
 
 const STEPS = [
   {src: edgescanIcon, title: 'Edgescan', key: 'edgescan'},
   {src: showoffIcon, title: 'Showoff.ie', key: 'showoff'},
 ]
 
-const ExperienceNav = () => {
-  const [activeStep, setActiveStep] = useState('edgescan')
+const STEP_COUNT = {edgescan: 0, showoff: 1};
 
-  const renderSteps = () => STEPS.map(({src, title, key}) => {
+const ExperienceNav = () => {
+  const [jobIndex, setJobIndex] = useState(0)
+
+  const renderSteps = () => STEPS.map((step, index) => {
+    const {src, title, key} = step;
     return (
-      <Step onClick={() => setActiveStep(key)} active={activeStep === key}>
+      <Step onClick={() => setJobIndex(index)} active={STEP_COUNT[key] === jobIndex }>
         <CustomIcon src={src} alt={title}/>
         <Step.Content>
           <Step.Title>{title}</Step.Title>
@@ -35,7 +38,7 @@ const ExperienceNav = () => {
         </StepsContainer>
       </Row>
       <Row>
-        <WorkExperience currentStep={activeStep}/>
+        <CustomCarousel jobIndex={jobIndex}/>
       </Row>
     </>
   )

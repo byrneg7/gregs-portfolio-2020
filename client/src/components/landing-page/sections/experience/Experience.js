@@ -6,20 +6,23 @@ import ExperienceNav from "./ExperienceNav";
 
 const Experience = () => {
   return (
-    <SkillsContainer id="skills">
-      <HorizontalDivide />
+    <ExperienceContainer id="experience">
+      <HorizontalDivide/>
       <SectionHeading
         heading="Experience"
         subheading="Professional background"
       />
       <ExperienceNav/>
-    </SkillsContainer>
+    </ExperienceContainer>
   );
 };
 
 export default Experience;
 
-const SkillsContainer = styled.div`
+const ExperienceContainer = styled.div`
   align-self: center;
   justify-self: center;
+   @media (max-width: 768px) {
+    width: 90%;
+  }
 `;

@@ -2,27 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FONT_GREY, FONT_GREY_DARK, HACKER_GREEN } from "../../../../assets/stylesheets/colors";
 
-const STEPS_CONTENT = {
-  edgescan: {
-    title: 'Edgescan',
-    url: 'https://www.edgescan.com',
-    date: 'Aug 2020 - present',
-    description: ['edgescan description'],
-    technologies: ["Rails", "React", "Figma", "AWS"],
-    highlights: ["foo", "bar"]
-  },
-  showoff: {
-    title: 'Showoff.ie',
-    url: 'https://www.showoff.ie',
-    date: 'April 2019 - Aug 2020',
-    description: ['showoff description'],
-    technologies: ["Rails", "React", "Heroku"],
-    highlights: ["foo", "bar"]
-  }
-}
-
-const WorkExperience = ({currentStep}) => {
-  const selectedJob = STEPS_CONTENT[currentStep]
+const JobDescription = ({job}) => {
 
   const renderJobHeading = ({url, title, date}) => {
     return (
@@ -54,7 +34,7 @@ const WorkExperience = ({currentStep}) => {
   })
 
   const renderSectionInfo = (section) => {
-    const currentSection = selectedJob[section]
+    const currentSection = job[section]
     if (currentSection) {
       return currentSection?.map(listInfo => <NoDotListElement>{listInfo}</NoDotListElement>)
     }
@@ -63,20 +43,21 @@ const WorkExperience = ({currentStep}) => {
 
   return (
     <WorkExperienceContainer>
-      {renderJobHeading(selectedJob)}
-      <Col>
+      {renderJobHeading(job)}
+      <Col style={{'marginLeft': '10px'}}>
         {renderSections()}
       </Col>
     </WorkExperienceContainer>
   )
 }
 
-export default WorkExperience;
+export default JobDescription;
 
 const WorkExperienceContainer = styled.div`
   display:flex;
   width: 100%;
   flex-direction: column;
+  height: 300px;
 `
 
 const Row = styled.div`
