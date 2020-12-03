@@ -7,7 +7,7 @@ import LinkIcon from "../shared/LinkIcon";
 import githubImage from "../../assets/images/svgs/github.svg";
 import linkedinImage from "../../assets/images/svgs/linkedin.svg";
 
-const SECTIONS = ["skills", "intro", "experience", "contact"];
+const SECTIONS = ["intro", "experience", "skills", "contact"];
 
 const Navbar = () => {
   const renderLinks = () => {
