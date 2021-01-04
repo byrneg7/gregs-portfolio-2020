@@ -7,12 +7,12 @@ import ExperienceNav from "./ExperienceNav";
 const Experience = () => {
   return (
     <ExperienceContainer id="experience">
-      <HorizontalDivide/>
+      <HorizontalDivide />
       <SectionHeading
         heading="Experience"
         subheading="Professional background"
       />
-      <ExperienceNav/>
+      <ExperienceNav />
     </ExperienceContainer>
   );
 };
@@ -22,7 +22,8 @@ export default Experience;
 const ExperienceContainer = styled.div`
   align-self: center;
   justify-self: center;
-   @media (max-width: 768px) {
-    width: 90%;
+  max-width: 70%;
+  @media (max-width: 768px) {
+    max-width: 90%;
   }
 `;
