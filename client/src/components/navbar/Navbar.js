@@ -65,15 +65,15 @@ const NavLink = styled.a`
 
 const LinkContainer = styled.div`
   width: 40%;
-  margin: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   text-transform: capitalize;
   @media (max-width: 768px) {
-    width: 70%;
-    margin-top: 25px;
+    width: 100%;
   }
 
   a {
