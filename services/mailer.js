@@ -18,7 +18,7 @@ class Mailer {
       sgMail
         .send(this.message)
         .then(() => resolve("Message send successfully"))
-        .catch((err) => reject.err.response.body);
+        .catch((err) => reject(err.response.body));
     });
   }
 }
