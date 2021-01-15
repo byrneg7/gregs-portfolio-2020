@@ -17,42 +17,62 @@ const SKILLS_LIST = [
     alt: "React Icon",
     height: "200px",
     width: "200px",
-    text: { heading: "ReactJS", body: "test 1" },
+    text: {
+      heading: "ReactJS",
+      body: "test 1",
+      repoSlug: "diary-app-rails-react",
+    },
   },
   {
     src: rubyIcon,
     alt: "Ruby Icon",
     height: "200px",
     width: "200px",
-    text: { heading: "Ruby", body: "test 2" },
+    text: {
+      heading: "Ruby",
+      body: "Rails + React fullstack diary & blog app",
+      repoSlug: "diary-app-rails-react",
+    },
   },
   {
     src: nodeIcon,
     alt: "Node Icon",
     height: "200px",
     width: "200px",
-    text: { heading: "NodeJS", body: "test 3" },
+    text: {
+      heading: "NodeJS",
+      body: "test 3",
+      repoSlug: "diary-app-rails-react",
+    },
   },
   {
     src: railsIcon,
     alt: "Rails Icon",
     height: "200px",
     width: "200px",
-    text: { heading: "Ruby on Rails", body: "test 4" },
+    text: {
+      heading: "Ruby on Rails",
+      body: "test 4",
+      repoSlug: "diary-app-rails-react",
+    },
   },
   {
     src: awsIcon,
     alt: "AWS Icon",
     height: "200px",
     width: "200px",
-    text: { heading: "AWS", body: "test 5" },
+    text: { heading: "AWS", body: "test 5", repoSlug: "diary-app-rails-react" },
   },
   {
     src: postgresIcon,
     alt: "Postgres Icon",
     height: "200px",
     width: "200px",
-    text: { heading: "PostgreSQL", body: "test 6" },
+    text: {
+      heading: "PostgreSQL",
+      body: "test 6",
+      repoSlug: "diary-app-rails-react",
+    },
   },
 ];
 

@@ -7,7 +7,7 @@ const SkillsIcon = ({
   altText,
   height,
   width,
-  text: { heading, body },
+  text: { heading, body, repoSlug },
 }) => {
   return (
     <SkillsIconContainer>
@@ -22,7 +22,14 @@ const SkillsIcon = ({
           </FlipCardFront>
           <FlipCardBack className="flip-card-back">
             <h1>{heading}</h1>
-            <p>{body}</p>
+            <a
+              href={`https://github.com/byrneg7/${repoSlug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              {body}{" "}
+            </a>
           </FlipCardBack>
         </FlipCardInner>
       </FlipCard>
