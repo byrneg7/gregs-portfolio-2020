@@ -29,7 +29,9 @@ const TextParagraphContainer = styled.div`
     color: ${FONT_GREY_DARK};
     margin-top: 0px;
     @media (max-width: 768px) {
-     font-size: 14px;
+      font-size: 14px;
+      font-weight: 130;
+      color: black;
     }
   }
 
