@@ -43,6 +43,10 @@ const SectionHeadingContainer = styled.div`
     @media (max-width: 768px) {
       font-size: 24px;
     }
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
   }
 
   h2 {

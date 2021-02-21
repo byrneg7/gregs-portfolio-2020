@@ -13,7 +13,7 @@ const Navbar = () => {
   const renderLinks = () => {
     return SECTIONS.map((section) => {
       return (
-        <NavLink key={uniqid()} href={`#${section}`}>
+        <NavLink key={uniqid()} href={`/#${section}`}>
           {section}
         </NavLink>
       );
@@ -33,7 +33,10 @@ const Navbar = () => {
           url="https://www.linkedin.com/in/byrneg7/"
         />
       </ExternalLinks>
-      <LinkContainer>{renderLinks()}</LinkContainer>
+      <LinkContainer>
+        {renderLinks()}
+        <NavLink href={`/demos`}>Demos</NavLink>
+      </LinkContainer>
     </NavbarContainer>
   );
 };

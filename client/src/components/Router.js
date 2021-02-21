@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import styled from "styled-components";
 
-import Example from "./Example";
+import Demos from "./demos/Demos";
 import LandingPage from "./landing-page/LandingPage";
 import RouteWithLayout from "./hocs/RouteWithLayout";
 import LandingPageLayout from "./layouts/landing-page-layout/LandingPageLayout";
@@ -20,7 +20,7 @@ const Router = () => {
             component={LandingPage}
             layout={LandingPageLayout}
           />
-          <Route path="/Example" exact component={Example} />
+          <Route path="/Demos" exact component={Demos} />
         </InnerContainer>
       </Container>
     </>
