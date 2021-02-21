@@ -1,14 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import { OUTLINE_GREY } from "../../../../assets/stylesheets/colors";
+import SkillsIconRepoList from "./SkillsIconRepoList";
 
 const SkillsIcon = ({
   src,
   altText,
   height,
   width,
-  text: { heading, body },
+  text: { heading, links },
 }) => {
+  console.log(heading, links);
   return (
     <SkillsIconContainer>
       <FlipCard className="flip-card">
@@ -22,7 +24,7 @@ const SkillsIcon = ({
           </FlipCardFront>
           <FlipCardBack className="flip-card-back">
             <h1>{heading}</h1>
-            <p>{body}</p>
+            <SkillsIconRepoList repos={links} />
           </FlipCardBack>
         </FlipCardInner>
       </FlipCard>

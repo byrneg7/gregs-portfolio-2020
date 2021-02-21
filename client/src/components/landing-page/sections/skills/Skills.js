@@ -17,42 +17,93 @@ const SKILLS_LIST = [
     alt: "React Icon",
     height: "200px",
     width: "200px",
-    text: { heading: "ReactJS", body: "test 1" },
+    text: {
+      heading: "ReactJS",
+      body: "test 1",
+      links: [
+        {
+          title: "Rails + React fullstack diary & blog app",
+          repoSlug: "diary-app-rails-react",
+        },
+        {
+          title:
+            "Stream app - includes an api server to fetch a stream list, react/ redux front end, and rtmp server for streaming content",
+          repoSlug: "stream-app",
+        },
+        {
+          title: "MERN stack app for collectable card game",
+          repoSlug: "lotus_mtg_mern",
+        },
+      ],
+    },
   },
   {
     src: rubyIcon,
     alt: "Ruby Icon",
     height: "200px",
     width: "200px",
-    text: { heading: "Ruby", body: "test 2" },
+    text: {
+      heading: "Ruby",
+      links: [
+        {
+          title: "Rails + React fullstack diary & blog app",
+          repoSlug: "diary-app-rails-react",
+        },
+        {
+          title: "Rails authentication + diary API",
+          repoSlug: "diary_api",
+        },
+      ],
+    },
   },
   {
     src: nodeIcon,
     alt: "Node Icon",
     height: "200px",
     width: "200px",
-    text: { heading: "NodeJS", body: "test 3" },
-  },
-  {
-    src: railsIcon,
-    alt: "Rails Icon",
-    height: "200px",
-    width: "200px",
-    text: { heading: "Ruby on Rails", body: "test 4" },
+    text: {
+      heading: "NodeJS",
+      links: [
+        {
+          title: "Rails + React fullstack diary & blog app",
+          repoSlug: "diary-app-rails-react",
+        },
+        {
+          title:
+            "Node + React survey App. Includes Auth, Stripe and Sendgrid integration",
+          repoSlug: "surveyApp",
+        },
+        {
+          title: "Node, Socket.io & Mustache for real-time chat app",
+          repoSlug: "node-chat-app",
+        },
+      ],
+    },
   },
   {
     src: awsIcon,
     alt: "AWS Icon",
     height: "200px",
     width: "200px",
-    text: { heading: "AWS", body: "test 5" },
+    text: {
+      heading: "AWS",
+      links: [],
+    },
   },
   {
     src: postgresIcon,
     alt: "Postgres Icon",
     height: "200px",
     width: "200px",
-    text: { heading: "PostgreSQL", body: "test 6" },
+    text: {
+      heading: "PostgreSQL",
+      links: [
+        {
+          title: "Knex + PostgreSQL DB",
+          repoSlug: "express-postgres-diary-app",
+        },
+      ],
+    },
   },
 ];
 
