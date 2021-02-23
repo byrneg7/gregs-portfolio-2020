@@ -103,6 +103,14 @@ const TypedText = styled.div`
     @media (max-width: 400px) {
       font-size: 18px;
     }
+     h3 {
+    font-size: 24px;
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+    @media (max-width: 400px) {
+      font-size: 18px;
+    }
   }
   p {
     font-size: 16px;

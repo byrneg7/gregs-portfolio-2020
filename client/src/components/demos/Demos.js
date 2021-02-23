@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { capitalize } from "../../utils";
 
-const DEMOS = ["snake", "paint"];
+const DEMOS = ["snake"];
 
 const Demos = () => {
   const [components, setComponents] = useState([]);
@@ -32,10 +32,7 @@ export default Demos;
 
 const DemoContainer = styled.div`
   display: flex;
-  margin-top: 50px;
   flex-direction: column;
-  max-width: 800px;
-  width: 80%;
 
   @media (max-width: 768px) {
     width: 90%;
